@@ -29,4 +29,4 @@ VimbaNET_Examples\AsynchronousGrab-Console Example with missing/incomplete frame
 ## 代码
 在这里：https://github.com/avtcn/vmbnet_freerun_missing_frames_statistics
 ## 编译运行
-可以使用Visual Studio 2010 或者更高版本，Vimba SDK 建议使用 2.1.3或者更高版本。
+可以使用[Visual Studio 2010](https://visualstudio.microsoft.com/) 或者更高版本，Vimba SDK 建议使用 [2.1.3或者更高版本](https://www.alliedvision.com/en/products/software.html)。
