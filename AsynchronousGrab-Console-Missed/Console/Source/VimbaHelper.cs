@@ -49,6 +49,7 @@ namespace AsynchronousGrabConsole
         private int m_FramesMissed = 0; // Not consecutive frames
         private int m_FramesFailed = 0; // Not completed frame status
         private ulong m_FrameID_Prev = 0;
+        private ulong m_FrameTimeStampPre = 0;
 
         /// <summary>
         /// Initializes a new instance of the VimbaHelper class
@@ -316,7 +317,14 @@ namespace AsynchronousGrabConsole
                 Console.Write(" Format:");
                 Console.Write(frame.PixelFormat);
 
-                Console.Write(" FPS:");
+                Console.Write(" Stamp:");
+                Console.Write(frame.Timestamp);
+
+                Console.Write(" StDiff:");
+                Console.Write(frame.Timestamp - m_FrameTimeStampPre);
+                m_FrameTimeStampPre = frame.Timestamp;
+
+                Console.Write(" ClientFPS:");
 
                 if (!double.IsNaN(frameRate) && !double.IsInfinity(frameRate) && nFramesMissing <= 0)
                 {

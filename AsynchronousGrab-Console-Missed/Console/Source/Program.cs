@@ -54,9 +54,12 @@ namespace AsynchronousGrabConsole
             string cameraID = null;                // The camera ID
 
             Console.WriteLine();
-            Console.WriteLine("///////////////////////////////////////////");
-            Console.WriteLine("/// Vimba API Asynchronous Grab Example ///");
-            Console.WriteLine("///////////////////////////////////////////");
+            Console.WriteLine("/////////////////////////////////////////////////////////////");
+            Console.WriteLine("///                                                       ///");
+            Console.WriteLine("/// Vimba NET API Asynchronous Console Grab Example       ///");
+            Console.WriteLine("/// with missing/incomplete frames statistics functions   ///");
+            Console.WriteLine("///                                                       ///");
+            Console.WriteLine("/////////////////////////////////////////////////////////////");
             Console.WriteLine();
 
             try
@@ -119,13 +122,20 @@ namespace AsynchronousGrabConsole
                         // Start the continuous image acquisition 
                         vimbaHelper.StartContinuousImageAcquisition(cameraID, showFrameInfos);
 
-                        Console.WriteLine("Press <enter> to stop acquisition...");
-                        Console.WriteLine("Frame received");
-                        Console.ReadKey();
+                        Console.WriteLine("Press <q> to stop acquisition...");
+                        Console.WriteLine("Frame receiving ...\n\n");
+
+                        // Joe: only 'q' keystroke will stop the loop
+                        char c = ' ';
+                        while ((c = Console.ReadKey().KeyChar) != 'q')
+                        {
+                            Console.WriteLine("\nPress <q> to stop acquisition..., The current date and time: {0:MM/dd/yyyy HH:mm:ss.fff}\n", DateTime.Now); 
+                        }
 
                         // Stop the image acquisition
-                        vimbaHelper.StopContinuousImageAcquisition(); 
-                        Console.WriteLine("\nAcquisition stopped.");
+                        vimbaHelper.StopContinuousImageAcquisition();
+                        Console.WriteLine("\nAcquisition stopped. The current date and time: {0:MM/dd/yyyy HH:mm:ss.fff}", DateTime.Now);
+
                     }
                     finally
                     {
