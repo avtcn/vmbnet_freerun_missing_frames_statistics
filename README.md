@@ -12,18 +12,16 @@ VimbaNET_Examples\AsynchronousGrab-Console Example with missing/incomplete frame
 ![Vmbnet-async-console-sample-missing-incomplete-frames-screenshot.png](Vmbnet-async-console-sample-missing-incomplete-frames-screenshot.png)
 * FrameID: 自从相机上电运行后，每一张图片都具有一个连续递增的序列号。
 * Missed: 已经累积丢失的图片数量。
-* Incomplete: 已经累积收到的不完整图片数量。
-例如，下面是主要的采图失败状态码：
-```
-    public enum VmbFrameStatusType
-    {
-        VmbFrameStatusFault = -4,
-        VmbFrameStatusInvalid = -3,
-        VmbFrameStatusTooSmall = -2,
-        VmbFrameStatusIncomplete = -1,
-        VmbFrameStatusComplete = 0
-    }
-```
+* Incomplete: 已经累积收到的不完整图片数量。  
+        例如，下面是主要的采图失败状态码：  
+        `VmbFrameStatusFault = -4,`  
+        `VmbFrameStatusInvalid = -3,`   
+        `VmbFrameStatusTooSmall = -2,`    
+        `VmbFrameStatusIncomplete = -1,`  
+        `VmbFrameStatusComplete = 0`  
+* Stamp: 相机拍摄图片时的时间戳，也就是相机感光芯片直接成像的时刻。
+* StDiff: 与前一张图片时间戳的差。
+
 
 # 代码及编译  
 ## 代码
