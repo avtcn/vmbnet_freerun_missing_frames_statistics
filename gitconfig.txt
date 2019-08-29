@@ -1,0 +1,29 @@
+[push]
+	default = matching
+        
+[core]
+	trustctime = false
+	editor = vim
+	filemode = false
+	whitespace = cr-at-eol
+	autocrlf = true
+
+[color]
+	ui = true
+
+[credential]
+	helper = cache --timeout=3600
+[alias]
+	last = log -1 --stat
+	cp = cherry-pick
+	co = checkout
+	cl = clone
+	ci = commit
+	st = status -sb
+	br = branch
+	unstage = reset HEAD --
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+[user]
+	name = joege
+	email = joe.ge@alliedvision.com
+
