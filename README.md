@@ -1,6 +1,12 @@
 Vimba .NET 图像采集状态统计例程 - vmbnet_freerun_missing_frames_statistics
 ---
 
+# 使用说明
+
+对于Allied Vision 千兆网相机，如果需要了解其在某个系统上运行状态，可以使用Vimba SDK自带的Vimba Viewer软件进行查看，同时可以看到网络丢包及重传等情况。本程序代码使用于客户自己想编程了解Allied Vision工业相机，特别是USB 3.0相机的运行状态。
+
+
+
 # 简介
 
 VimbaNET_Examples\AsynchronousGrab-Console Example with missing/incomplete frames counting functions.  
